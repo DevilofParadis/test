@@ -19,10 +19,10 @@ APP_ID = int(os.environ.get("APP_ID", "16844842"))
 API_HASH = os.environ.get("API_HASH", "f6b0ceec5535804be7a56ac71d08a5d4")
 
 #Your db channel Id
-CHANNEL_ID = int(os.environ.get("CHANNEL_ID", "-1001594216182"))
+CHANNEL_ID = int(os.environ.get("CHANNEL_ID", "-1001920102302"))
 
 #OWNER ID
-OWNER_ID = int(os.environ.get("OWNER_ID", "1537176737"))
+OWNER_ID = int(os.environ.get("OWNER_ID", "5751548638"))
 
 #Port
 PORT = os.environ.get("PORT", "8080")
@@ -37,14 +37,14 @@ TG_BOT_WORKERS = int(os.environ.get("TG_BOT_WORKERS", "4"))
 START_MSG = os.environ.get("START_MESSAGE", "Hello {first}\n\nI can store private files in Specified Channel and other users can access it from special link.")
 try:
     ADMINS=[]
-    for x in (os.environ.get("ADMINS", "1476517140 2056683734").split()):
+    for x in (os.environ.get("ADMINS", "6265459491 5821581983").split()):
         ADMINS.append(int(x))
 except ValueError:
         raise Exception("Your Admins list does not contain valid integers.")
         
 try:
     CHANNEL_ADMINS=[]
-    for x in (os.environ.get("CHANNEL_ADMINS", "1476517140 2056683734").split()):
+    for x in (os.environ.get("CHANNEL_ADMINS", "5821581983 6265459491 5751548638").split()):
         CHANNEL_ADMINS.append(int(x))
 except ValueError:
         raise Exception("Your channel Admins list does not contain valid integers.")
