@@ -18,7 +18,7 @@ database = dbclient[DB_NAME]
 
 user_data = database['users']
 channel_data = database['channel1']
-channel_data = database['channel2']
+channel_dataa = database['channel2']
 
 
 
@@ -56,7 +56,7 @@ def find_channel_1(query):
               
 def find_channel_2(query):
     NOTHING = 0
-    id = channel_data.find_one({'sub_channel2':query})
+    id = channel_dataa.find_one({'sub_channel2':query})
     if id is not None:
         channel2_id = int(id['channel2'])
         return channel2_id
