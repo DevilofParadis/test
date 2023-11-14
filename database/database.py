@@ -5,7 +5,7 @@
 
 import pymongo, os
 import subprocess
-from config import DB_URI, DB_NAME, CHANNEL_ADMINS, USELESS_TEXT
+from config import DB_URI, DB_NAME, CHANNEL_ADMINS, USELESS_TEXT, USELESS_TEXT2
 from pyrogram import Client, filters, __version__
 from pyrogram.enums import ParseMode
 from pyrogram.types import Message, InlineKeyboardMarkup, InlineKeyboardButton, CallbackQuery
