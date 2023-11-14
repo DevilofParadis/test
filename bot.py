@@ -5,7 +5,7 @@ from pyrogram import Client
 from pyrogram.enums import ParseMode
 import sys
 from datetime import datetime
-from database.database import find_channel_1, channel_data
+from database.database import find_channel_1, find_channel_2, channel_data
 
 from config import API_HASH, APP_ID, LOGGER, TG_BOT_TOKEN, TG_BOT_WORKERS, CHANNEL_ID, USELESS_TEXT
 
