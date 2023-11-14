@@ -17,7 +17,8 @@ database = dbclient[DB_NAME]
 
 
 user_data = database['users']
-channel_data = database['channels']
+channel1 = database['channel1']
+channel2 = databse['channel2']
 
 
 
