@@ -27,7 +27,7 @@ async def addchannel (client: Bot, message: Message):
         except:
             pass
         try: 
-            cluster_add = {'sub_channel1':USELESS_TEXT,'channel1':channel1}
+            cluster_add = {'sub_channel1':USELESS_TEXT,'sub_channel1':channel1}
             channel_data.insert_one(cluster_add)
             await message.reply('Succesfully Added.Now wait 1min untill bot get restarted')
         except Exception as e:
@@ -48,7 +48,7 @@ async def addchannel (client: Bot, message: Message):
         except:
             pass
         try: 
-            cluster_add = {'sub_channel2':USELESS_TEXT2,'channel2':channel2}
+            cluster_add = {'sub_channel2':USELESS_TEXT2,'sub_channel2':channel2}
             channel_dataa.insert_one(cluster_add)
             await message.reply('Succesfully Added.Now wait 1min untill bot get restarted')
         except Exception as e:
