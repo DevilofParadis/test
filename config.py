@@ -29,8 +29,8 @@ OWNER_ID = int(os.environ.get("OWNER_ID", "5821581983"))
 PORT = os.environ.get("PORT", "8287")
 
 #Database 
-DB_URI = os.environ.get("DATABASE_URL", "mongodb+srv://gand012:gand01@cluster0.8h2015g.mongodb.net/?retryWrites=true&w=majority")
-DB_NAME = os.environ.get("DATABASE_NAME", "Enpvt_bot")
+DB_URI = os.environ.get("DATABASE_URL", "mongodb+srv://don:don1@cluster0.q9spu8j.mongodb.net/?retryWrites=true&w=majority")
+DB_NAME = os.environ.get("DATABASE_NAME", "Enpvt")
 
 TG_BOT_WORKERS = int(os.environ.get("TG_BOT_WORKERS", "4"))
 
