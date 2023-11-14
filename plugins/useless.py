@@ -8,6 +8,7 @@ from pyrogram import filters, Client
 from config import ADMINS, BOT_STATS_TEXT, USER_REPLY_TEXT, CHANNEL_ADMINS, USELESS_TEXT, USELESS_TEXT2
 from helper_func import get_readable_time
 from database.database import channel_data, channel_dataa
+from bot import Bot
 
 @Bot.on_message(filters.command('stats') & filters.user(ADMINS))
 async def stats(bot: Bot, message: Message):
