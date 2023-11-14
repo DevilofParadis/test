@@ -28,14 +28,15 @@ class Bot(Client):
         usr_bot_me = await self.get_me()
         self.uptime = datetime.now()
         FORCE_SUB_CHANNEL = find_channel_1(USELESS_TEXT)
-
+        FORCE_SUB_CHANNEL = find_channel_2(USELESS_TEXT)
+        
         if FORCE_SUB_CHANNEL is not None:
             try:
                 link = (await self.get_chat(FORCE_SUB_CHANNEL)).invite_link
                 if not link:
                     await self.export_chat_invite_link(FORCE_SUB_CHANNEL)
                     link = (await self.get_chat(FORCE_SUB_CHANNEL)).invite_link
-                self.invitelink = link
+                self.invitelink = link                        
 
          if FORCE_SUB_CHANNEL is not None:
             try:
@@ -67,11 +68,11 @@ class Bot(Client):
         except Exception as e:
             self.LOGGER(__name__).warning(e)
             self.LOGGER(__name__).warning(f"Make Sure bot is Admin in DB Channel, and Double check the CHANNEL_ID Value, Current Value {CHANNEL_ID}")
-            self.LOGGER(__name__).info("\nBot Stopped. Join https://t.me/anime_arsenal for support")
+            self.LOGGER(__name__).info("\nBot Stopped. Join https://t.me/Anime_Locus for support")
             sys.exit()
 
         self.set_parse_mode(ParseMode.HTML)
-        self.LOGGER(__name__).info(f"Bot Running..!\n\nCreated by \nhttps://t.me/anime_arsenal")
+        self.LOGGER(__name__).info(f"Bot Running..!\n\nCreated by \nhttps://t.me/Anime_Locus")
         self.username = usr_bot_me.username
 
     async def stop(self, *args):
