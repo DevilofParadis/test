@@ -7,7 +7,7 @@ import sys
 from datetime import datetime
 from database.database import find_channel_1, find_channel_2, channel_data
 
-from config import API_HASH, APP_ID, LOGGER, TG_BOT_TOKEN, TG_BOT_WORKERS, CHANNEL_ID, USELESS_TEXT
+from config import API_HASH, APP_ID, LOGGER, TG_BOT_TOKEN, TG_BOT_WORKERS, CHANNEL_ID, USELESS_TEXT, USELESS_TEXT2
 
 class Bot(Client):
     def __init__(self):
