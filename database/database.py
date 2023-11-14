@@ -47,7 +47,7 @@ async def del_user(user_id: int):
         
 def find_channel_1(query):
     NOTHING = 0
-    id = channel1.find_one({'sub_channel1':query})
+    id = channel_data.find_one({'sub_channel1':query})
     if id is not None:
         channel1_id = int(id['channel1'])
         return channel1_id
@@ -56,7 +56,7 @@ def find_channel_1(query):
               
 def find_channel_2(query):
     NOTHING = 0
-    id = channel2.find_one({'sub_channel2':query})
+    id = channel_data.find_one({'sub_channel2':query})
     if id is not None:
         channel2_id = int(id['channel2'])
         return channel2_id
