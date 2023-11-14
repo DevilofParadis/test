@@ -30,7 +30,7 @@ PORT = os.environ.get("PORT", "8287")
 
 #Database 
 DB_URI = os.environ.get("DATABASE_URL", "mongodb+srv://gand012:gand01@cluster0.8h2015g.mongodb.net/?retryWrites=true&w=majority")
-DB_NAME = os.environ.get("DATABASE_NAME", "eBot")
+DB_NAME = os.environ.get("DATABASE_NAME", "Enpvt_bot")
 
 TG_BOT_WORKERS = int(os.environ.get("TG_BOT_WORKERS", "4"))
 
