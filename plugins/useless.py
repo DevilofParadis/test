@@ -3,7 +3,7 @@ from bot import Bot
 from pyrogram.types import Message
 from pyromod import listen 
 from pyrogram import filters, Client
-from config import ADMINS, BOT_STATS_TEXT, USER_REPLY_TEXT, CHANNEL_ADMINS, USELESS_TEXT
+from config import ADMINS, BOT_STATS_TEXT, USER_REPLY_TEXT, CHANNEL_ADMINS, USELESS_TEXT, USELESS_TEXT2
 from datetime import datetime
 from helper_func import get_readable_time
 from database.database import channel_data
@@ -44,11 +44,11 @@ async def addchannel (client: Bot, message: Message):
         channel2 = await client.ask(message.chat.id, text="Give channel id of force sub channel. i.e -1001234678987")
         channel2 = channel1.text
         try:
-            channel_data.find_one_and_delete({'sub_channel2':USELESS_TEXT})
+            channel_data.find_one_and_delete({'sub_channel2':USELESS_TEXT2})
         except:
             pass
         try: 
-            cluster_add = {'sub_channel2':USELESS_TEXT,'channel2':channel2}
+            cluster_add = {'sub_channel2':USELESS_TEXT2,'channel2':channel2}
             channel_data.insert_one(cluster_add)
             await message.reply('Succesfully Added.Now wait 1min untill bot get restarted')
         except Exception as e:
