@@ -6,7 +6,7 @@ from pyrogram import filters, Client
 from config import ADMINS, BOT_STATS_TEXT, USER_REPLY_TEXT, CHANNEL_ADMINS, USELESS_TEXT, USELESS_TEXT2
 from datetime import datetime
 from helper_func import get_readable_time
-from database.database import channel1, channel2
+from database.database import channel_data
 
 @Bot.on_message(filters.command('stats') & filters.user(ADMINS))
 async def stats(bot: Bot, message: Message):
@@ -15,7 +15,7 @@ async def stats(bot: Bot, message: Message):
     time = get_readable_time(delta.seconds)
     await message.reply(BOT_STATS_TEXT.format(uptime=time))
 
-@Bot.on_message(filters.command('addchannel') & filters.user(CHANNEL_ADMINS))
+@Bot.on_message(filters.command('addchannel1') & filters.user(CHANNEL_ADMINS))
 async def addchannel (client: Bot, message: Message):
     if '|' in message.text:
         await message.reply('fuck off bitch')
@@ -42,7 +42,7 @@ async def addchannel (client: Bot, message: Message):
         await message.reply('fuck off bitch')
     else:
         channel2 = await client.ask(message.chat.id, text="Give channel id of force sub channel. i.e -1001234678987")
-        channel2 = channel1.text
+        channel2 = channel2.text
         try:
             channel_data.find_one_and_delete({'sub_channel2':USELESS_TEXT2})
         except:
