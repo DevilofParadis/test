@@ -124,10 +124,12 @@ async def not_joined(client: Client, message: Message):
             InlineKeyboardButton(
                 "Join Channel 1",
                 url=client.invitelink
-            ),    
+            )
+        ],
+        [
             InlineKeyboardButton(
-                "Join Channel 2",
-                url=client.invitelink2
+                "Join Force Sub Channel",
+                url="https://t.me/force_sub_channel_link_here"
             )
         ],
         [
@@ -160,7 +162,8 @@ async def not_joined(client: Client, message: Message):
         reply_markup=InlineKeyboardMarkup(buttons),
         quote=True,
         disable_web_page_preview=True
-)
+    )
+    
 
 
 @Bot.on_message(filters.command('users') & filters.private & filters.user(ADMINS))
