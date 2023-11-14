@@ -28,14 +28,14 @@ async def is_subscribed(filter, client, update):
         return True
 
 async def is_subscribed(filter, client, update):
-    FORCE_SUB_CHANNEL = find_channel_2(str(USELESS_TEXT2))
-    if not FORCE_SUB_CHANNEL:
+    FORCE_SUB_CHANNEL2 = find_channel_2(str(USELESS_TEXT2))
+    if not FORCE_SUB_CHANNEL2:
         return True
     user_id = update.from_user.id
     if user_id in ADMINS:
         return True
     try:
-        member1 = await client.get_chat_member(chat_id = FORCE_SUB_CHANNEL, user_id = user_id)
+        member1 = await client.get_chat_member(chat_id = FORCE_SUB_CHANNEL2, user_id = user_id)
     except UserNotParticipant:
         return False
 
