@@ -122,7 +122,11 @@ async def not_joined(client: Client, message: Message):
     buttons = [
         [
             InlineKeyboardButton(
-                "Join Channel",
+                "Join Channel 1",
+                url=client.invitelink
+            ),    
+            InlineKeyboardButton(
+                "Join Channel 2",
                 url=client.invitelink
             )
         ],
@@ -156,7 +160,8 @@ async def not_joined(client: Client, message: Message):
         reply_markup=InlineKeyboardMarkup(buttons),
         quote=True,
         disable_web_page_preview=True
-    )
+)
+
 
 @Bot.on_message(filters.command('users') & filters.private & filters.user(ADMINS))
 async def get_users(client: Bot, message: Message):
