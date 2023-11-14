@@ -9,6 +9,7 @@ from logging.handlers import RotatingFileHandler
 
 
 USELESS_TEXT = os.environ.get("USELESS_TEXT", "1")
+USELESS_TEXT2 = os.environ.get("USELESS_TEXT2", "1")
 #Bot token @Botfather
 TG_BOT_TOKEN = os.environ.get("TG_BOT_TOKEN", "6370395122:AAG4RqyyQAHAPHYiRHcgUbEpHU0qzNCX3ic")
 
