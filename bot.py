@@ -37,9 +37,11 @@ class Bot(Client):
                     await self.export_chat_invite_link(FORCE_SUB_CHANNEL)
                     link = (await self.get_chat(FORCE_SUB_CHANNEL)).invite_link
                 self.invitelink = link 
-                
-         if FORCE_SUB_CHANNEL is not None:
-             try:
+
+        FORCE_SUB_CHANNEL = find_channel_2(USELESS_TEXT)
+        
+        if FORCE_SUB_CHANNEL is not None:
+            try:
                 link = (await self.get_chat(FORCE_SUB_CHANNEL)).invite_link
                 if not link:
                     await self.export_chat_invite_link(FORCE_SUB_CHANNEL)
