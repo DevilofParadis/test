@@ -53,4 +53,11 @@ def find_channel_1(query):
     else:
         return None
               
-    
+def find_channel_2(query):
+    NOTHING = 0
+    id = channel_data.find_one({'sub_channel2':query})
+    if id is not None:
+        channel1_id = int(id['channel2'])
+        return channel2_id
+    else:
+        return None
