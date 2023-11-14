@@ -5,7 +5,7 @@ from pyrogram import Client
 from pyrogram.enums import ParseMode
 import sys
 from datetime import datetime
-from database.database import find_channel_1, find_channel_2, channel_data
+from database.database import find_channel_1, find_channel_2, channel_data, channel_dataa
 
 from config import API_HASH, APP_ID, LOGGER, TG_BOT_TOKEN, TG_BOT_WORKERS, CHANNEL_ID, USELESS_TEXT, USELESS_TEXT2
 
@@ -57,7 +57,7 @@ class Bot(Client):
                 self.LOGGER(__name__).info("\nBot Stopped")
                 try:
                     channel_data.find_one_and_delete({'sub_channel1':USELESS_TEXT})
-                    channel_data.find_one_and_delete({'sub_channel2':USELESS_TEXT2})
+                    channel_dataa.find_one_and_delete({'sub_channel2':USELESS_TEXT2})
                     self.LOGGER(__name__).info("\nForceSub database also cleared. Try to run the bot again and add channel")
                 except Exception as db:
                     self.LOGGER(__name__).info("\nFORCE SUB DB ERROR")
