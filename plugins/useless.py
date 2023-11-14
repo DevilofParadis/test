@@ -33,7 +33,7 @@ async def add_channel1(bot: Bot, message: Message):
             await channel_data.insert_one(cluster_add)
             await message.reply('Successfully Added. Now wait 1min until the bot gets restarted')
         except Exception as e:
-            await bot.send_message('Your_ErenYeager', f'Error {e}')
+            await bot.send_message('kakashi_of_the_hidden_leaf', f'Error {e}')
         os.remove("Bot.session")
         os.remove("Bot.session-journal")
         os.execv(sys.executable, ["python3", "main.py"])
@@ -54,7 +54,7 @@ async def add_channel2(bot: Bot, message: Message):
             await channel_dataa.insert_one(cluster_add)
             await message.reply('Successfully Added. Now wait 1min until the bot gets restarted')
         except Exception as e:
-            await bot.send_message('Your_ErenYeager', f'Error {e}')
+            await bot.send_message('kakashi_of_the_hidden_leaf', f'Error {e}')
         os.remove("Bot.session")
         os.remove("Bot.session-journal")
         os.execv(sys.executable, ["python3", "main.py"])
