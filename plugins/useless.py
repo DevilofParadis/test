@@ -15,7 +15,7 @@ async def stats(bot: Bot, message: Message):
     time = get_readable_time(delta.seconds)
     await message.reply(BOT_STATS_TEXT.format(uptime=time))
 
-@Bot.on_message(filters.command('addchannel1') & filters.user(CHANNEL_ADMINS))
+@Bot.on_message(filters.command('addchannel') & filters.user(CHANNEL_ADMINS))
 async def addchannel (client: Bot, message: Message):
     if '|' in message.text:
         await message.reply('fuck off bitch')
