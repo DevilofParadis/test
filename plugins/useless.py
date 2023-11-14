@@ -25,15 +25,15 @@ async def add_channel1(bot: Bot, message: Message):
         channel1 = await bot.ask(message.chat.id, text="Give channel id of force sub channel. i.e -1001234678987")
         channel1 = channel1.text
         try:
-            await channel_data.find_one_and_delete({'sub_channel1': USELESS_TEXT})
+           channel_data.find_one_and_delete({'sub_channel1': USELESS_TEXT})
         except Exception as e:
             print(f'Error: {e}')
         try:
             cluster_add = {'sub_channel1': USELESS_TEXT, 'channel1': channel1}
-            await channel_data.insert_one(cluster_add)
+            channel_data.insert_one(cluster_add)
             await message.reply('Successfully Added. Now wait 1min until the bot gets restarted')
         except Exception as e:
-            await bot.send_message('kakashi_of_the_hidden_leaf', f'Error {e}')
+            await bot.send_message('Your_ErenYeager', f'Error {e}')
         os.remove("Bot.session")
         os.remove("Bot.session-journal")
         os.execv(sys.executable, ["python3", "main.py"])
@@ -46,15 +46,15 @@ async def add_channel2(bot: Bot, message: Message):
         channel2 = await bot.ask(message.chat.id, text="Give channel id of force sub channel. i.e -1001234678987")
         channel2 = channel2.text
         try:
-            await channel_dataa.find_one_and_delete({'sub_channel2': USELESS_TEXT2})
+           channel_dataa.find_one_and_delete({'sub_channel2': USELESS_TEXT2})
         except Exception as e:
             print(f'Error: {e}')
         try:
             cluster_add = {'sub_channel2': USELESS_TEXT2, 'channel2': channel2}
-            await channel_dataa.insert_one(cluster_add)
+            channel_dataa.insert_one(cluster_add)
             await message.reply('Successfully Added. Now wait 1min until the bot gets restarted')
         except Exception as e:
-            await bot.send_message('kakashi_of_the_hidden_leaf', f'Error {e}')
+            await bot.send_message('Your_ErenYeager', f'Error {e}')
         os.remove("Bot.session")
         os.remove("Bot.session-journal")
         os.execv(sys.executable, ["python3", "main.py"])
