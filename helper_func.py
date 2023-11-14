@@ -5,7 +5,7 @@ import re
 import asyncio
 from pyrogram import filters
 from pyrogram.enums import ChatMemberStatus
-from config import ADMINS, USELESS_TEXT
+from config import ADMINS, USELESS_TEXT, USELESS_TEXT2
 from database.database import find_channel_1, find_channel_2
 from pyrogram.errors.exceptions.bad_request_400 import UserNotParticipant
 from pyrogram.errors import FloodWait
@@ -28,7 +28,7 @@ async def is_subscribed(filter, client, update):
         return True
 
 async def is_subscribed(filter, client, update):
-    FORCE_SUB_CHANNEL = find_channel_2(str(USELESS_TEXT2))
+    FORCE_SUB_CHANNEL2 = find_channel_2(str(USELESS_TEXT2))
     if not FORCE_SUB_CHANNEL2:
         return True
     user_id = update.from_user.id
