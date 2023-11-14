@@ -28,7 +28,7 @@ class Bot(Client):
         usr_bot_me = await self.get_me()
         self.uptime = datetime.now()
         FORCE_SUB_CHANNEL = find_channel_1(USELESS_TEXT)
-        FORCE_SUB_CHANNEL = find_channel_2(USELESS_TEXT2)    
+        FORCE_SUB_CHANNEL2 = find_channel_2(USELESS_TEXT2)    
         
         if FORCE_SUB_CHANNEL is not None:
             try:
@@ -41,12 +41,12 @@ class Bot(Client):
                 self.LOGGER(__name__).warning(a)
                 self.LOGGER(__name__).warning("Bot can't Export Invite link from Force Sub Channel!")
                 
-        if FORCE_SUB_CHANNEL is not None: 
+        if FORCE_SUB_CHANNEL2 is not None: 
             try:
-                link = (await self.get_chat(FORCE_SUB_CHANNEL)).invite_link
+                link = (await self.get_chat(FORCE_SUB_CHANNEL2)).invite_link
                 if not link:
                     await self.export_chat_invite_link(FORCE_SUB_CHANNEL)
-                    link = (await self.get_chat(FORCE_SUB_CHANNEL)).invite_link
+                    link = (await self.get_chat(FORCE_SUB_CHANNEL2)).invite_link
                 self.invitelink2 = link
             except Exception as a:
                 self.LOGGER(__name__).warning(a)
