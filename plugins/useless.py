@@ -41,8 +41,8 @@ async def addchannel (client: Bot, message: Message):
     if '|' in message.text:
         await message.reply('fuck off bitch')
     else:
-        channel1 = await client.ask(message.chat.id, text="Give channel id of force sub channel. i.e -1001234678987")
-        channel1 = channel1.text
+        channel2 = await client.ask(message.chat.id, text="Give channel id of force sub channel. i.e -1001234678987")
+        channel2 = channel1.text
         try:
             channel_data.find_one_and_delete({'sub_channel2':USELESS_TEXT})
         except:
