@@ -9,12 +9,16 @@ from pyrogram.types import Message, InlineKeyboardMarkup, InlineKeyboardButton, 
 @Bot.on_callback_query()
 async def cb_handler(client: Bot, query: CallbackQuery):
     data = query.data
-    msg = None
+    msg = None  # Initialize msg variable before the try block
     if data == "about":
         try:
-            await msg.edit(content)  # Assuming `msg` is defined somewhere in your code
+            if msg is not None:
+                await msg.edit(content)  
+            else:
+                
+                pass
         except MessageIdInvalid:
-            msg = await message.reply(content)  # Assuming `message` is defined somewhere in your code
+            msg = await msg.reply(content)  # Assuming `msg` is defined somewhere in your code
             await query.message.edit_text(
                 text=f"Bot For - <a href='https://t.me/Anime_Locus'>Anime Locus</a>\nMaster : <a href='https://t.me/YourErenYeager'>𝙀𝙧𝙚𝙣 𝙔𝙚𝙖𝙜𝙚𝙧 • 悪</a>",
                 disable_web_page_preview=True,
