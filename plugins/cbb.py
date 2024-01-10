@@ -18,7 +18,7 @@ async def cb_handler(client: Bot, query: CallbackQuery):
                 
                 pass
         except MessageIdInvalid:
-            msg = await msg.reply(content)  # Assuming `msg` is defined somewhere in your code
+            msg = await message.reply(content)  # Assuming `msg` is defined somewhere in your code
             await query.message.edit_text(
                 text=f"Bot For - <a href='https://t.me/Anime_Locus'>Anime Locus</a>\nMaster : <a href='https://t.me/YourErenYeager'>𝙀𝙧𝙚𝙣 𝙔𝙚𝙖𝙜𝙚𝙧 • 悪</a>",
                 disable_web_page_preview=True,
