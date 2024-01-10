@@ -9,6 +9,7 @@ from pyrogram.types import Message, InlineKeyboardMarkup, InlineKeyboardButton, 
 @Bot.on_callback_query()
 async def cb_handler(client: Bot, query: CallbackQuery):
     data = query.data
+    msg = None
     if data == "about":
         try:
             await msg.edit(content)  # Assuming `msg` is defined somewhere in your code
