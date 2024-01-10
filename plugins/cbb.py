@@ -11,8 +11,8 @@ async def cb_handler(client: Bot, query: CallbackQuery):
     data = query.data
     if data == "about":
         try:
-        await msg.edit(content)
-    except MessageIdInvalid:
+    await msg.edit(content)
+except MessageIdInvalid:
          msg = await message.reply(content)
         await query.message.edit_text(
             text = f"Bot For - <a href='https://t.me/Anime_Locus'>Anime Locus</a>\nMaster : <a href='https://t.me/YourErenYeager'>𝙀𝙧𝙚𝙣 𝙔𝙚𝙖𝙜𝙚𝙧 • 悪</a>",
