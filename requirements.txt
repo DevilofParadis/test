@@ -1,5 +1,5 @@
 # --- For-Bot-Working --------- #
-git+http://GitHub.com/masterolic/pyrogram.git
+git+https://github.com/MKN-BOTZ/pyrogram
 TgCrypto
 pyromod==1.5
 # --- For-Database ------------ #
