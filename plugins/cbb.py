@@ -1,15 +1,12 @@
-#(©)Codexbotz
-
 from pyrogram import __version__
 from bot import Bot
-from config import OWNER_ID
-from pyrogram.types import Message, InlineKeyboardMarkup, InlineKeyboardButton, CallbackQuery
+from pyrogram.types import InlineKeyboardMarkup, InlineKeyboardButton, CallbackQuery
 
 @Bot.on_callback_query()
 async def cb_handler(client: Bot, query: CallbackQuery):
     data = query.data
     if data == "about":
-        await query.message.edit_text(
+        await query.message.reply_text(
             text = f"Bot For - <a href='https://t.me/Anime_Locus'>Anime Locus</a>\nMaster : <a href='https://t.me/YourErenYeager'>𝙀𝙧𝙚𝙣 𝙔𝙚𝙖𝙜𝙚𝙧 • 悪</a>",
             disable_web_page_preview = True,
             reply_markup = InlineKeyboardMarkup(
@@ -20,6 +17,7 @@ async def cb_handler(client: Bot, query: CallbackQuery):
                 ]
             )
         )
+        await query.message.delete()
     elif data == "close":
         await query.message.delete()
         try:

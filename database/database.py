@@ -1,33 +1,21 @@
-#(©)CodeXBotz
+from motor import motor_asyncio
+from config import DB_URI, DB_NAME
 
-
-
-
-import pymongo, os
-import subprocess
-from config import DB_URI, DB_NAME, CHANNEL_ADMINS, USELESS_TEXT, USELESS_TEXT2
-from pyrogram import Client, filters, __version__
-from pyrogram.enums import ParseMode
-from pyrogram.types import Message, InlineKeyboardMarkup, InlineKeyboardButton, CallbackQuery
-from pyrogram.errors import FloodWait, UserIsBlocked, InputUserDeactivated
-
-
-dbclient = pymongo.MongoClient(DB_URI)
+dbclient = motor_asyncio.AsyncIOMotorClient(DB_URI)
 database = dbclient[DB_NAME]
 
 
-user_data = database['users']
-channel_data = database['channel1']
-channel_dataa = database['channel2']
-
+user_data = database.users
+channel_data = database.channel1
+channel_dataa = database.channel2
 
 
 async def present_user(user_id : int):
-    found = user_data.find_one({'_id': user_id})
+    found = await user_data.find_one({'_id': user_id})
     return bool(found)
 
 async def add_user(user_id: int):
-    user_data.insert_one({'_id': user_id})
+    await user_data.insert_one({'_id': user_id})
     return
 
 async def full_userbase():
@@ -39,26 +27,19 @@ async def full_userbase():
     return user_ids
 
 async def del_user(user_id: int):
-    user_data.delete_one({'_id': user_id})
+    await user_data.delete_one({'_id': user_id})
     return
-    
-
-        
-        
-def find_channel_1(query):
-    NOTHING = 0
-    id = channel_data.find_one({'sub_channel1':query})
+   
+async def find_channel_1(query):
+    id = await channel_data.find_one({'sub_channel1': query})
     if id is not None:
-        channel1_id = int(id['channel1'])
-        return channel1_id
+        return id['channel1']
     else:
         return None
               
-def find_channel_2(query):
-    NOTHING = 0
-    id = channel_dataa.find_one({'sub_channel2':query})
+async def find_channel_2(query):
+    id = await channel_dataa.find_one({'sub_channel2': query})
     if id is not None:
-        channel2_id = int(id['channel2'])
-        return channel2_id
+        return id['channel2']
     else:
         return None

@@ -1,13 +1,10 @@
-#(©)Codexbotz
-
-import pyromod.listen
 from pyrogram import Client
 from pyrogram.enums import ParseMode
 import sys
 from datetime import datetime
 from database.database import find_channel_1, find_channel_2, channel_data, channel_dataa
 
-from config import API_HASH, APP_ID, LOGGER, TG_BOT_TOKEN, TG_BOT_WORKERS, CHANNEL_ID, USELESS_TEXT, USELESS_TEXT2
+from config import API_HASH, APP_ID, LOGGER, CHANNEL_ID, USELESS_TEXT, USELESS_TEXT2, TG_BOT_TOKEN
 
 class Bot(Client):
     def __init__(self):
@@ -18,7 +15,7 @@ class Bot(Client):
             plugins={
                 "root": "plugins"
             },
-            workers=TG_BOT_WORKERS,
+            sleep_threshold=0,
             bot_token=TG_BOT_TOKEN
         )
         self.LOGGER = LOGGER
@@ -27,8 +24,8 @@ class Bot(Client):
         await super().start()
         usr_bot_me = await self.get_me()
         self.uptime = datetime.now()
-        FORCE_SUB_CHANNEL = find_channel_1(USELESS_TEXT)
-        FORCE_SUB_CHANNEL2 = find_channel_2(USELESS_TEXT2)    
+        FORCE_SUB_CHANNEL = await find_channel_1(USELESS_TEXT)
+        FORCE_SUB_CHANNEL2 = await find_channel_2(USELESS_TEXT2)    
         
         if FORCE_SUB_CHANNEL is not None:
             try:

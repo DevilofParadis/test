@@ -11,7 +11,7 @@ from pyrogram.errors.exceptions.bad_request_400 import UserNotParticipant
 from pyrogram.errors import FloodWait
 
 async def is_subscribed(filter, client, update):
-    FORCE_SUB_CHANNEL = find_channel_1(str(USELESS_TEXT))
+    FORCE_SUB_CHANNEL = await find_channel_1(str(USELESS_TEXT))
     if not FORCE_SUB_CHANNEL:
         return True
     user_id = update.from_user.id
@@ -28,7 +28,7 @@ async def is_subscribed(filter, client, update):
         return True
 
 async def is_subscribed(filter, client, update):
-    FORCE_SUB_CHANNEL2 = find_channel_2(str(USELESS_TEXT2))
+    FORCE_SUB_CHANNEL2 = await find_channel_2(str(USELESS_TEXT2))
     if not FORCE_SUB_CHANNEL2:
         return True
     user_id = update.from_user.id
@@ -45,10 +45,10 @@ async def is_subscribed(filter, client, update):
         return True
 
 async def is_subscribed(filter, client, update):
-    FORCE_SUB_CHANNEL = find_channel_1(str(USELESS_TEXT))
+    FORCE_SUB_CHANNEL = await find_channel_1(str(USELESS_TEXT))
     if not FORCE_SUB_CHANNEL:
         return True
-    FORCE_SUB_CHANNEL2 = find_channel_2(str(USELESS_TEXT2))
+    FORCE_SUB_CHANNEL2 = await find_channel_2(str(USELESS_TEXT2))
     if not FORCE_SUB_CHANNEL2:
         return True
     user_id = update.from_user.id

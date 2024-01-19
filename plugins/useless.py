@@ -1,10 +1,8 @@
 import os
-import subprocess
 import sys
 from datetime import datetime
 from pyrogram.types import Message
-from pyromod import listen
-from pyrogram import filters, Client
+from pyrogram import filters
 from config import ADMINS, BOT_STATS_TEXT, USER_REPLY_TEXT, CHANNEL_ADMINS, USELESS_TEXT, USELESS_TEXT2
 from helper_func import get_readable_time
 from database.database import channel_data, channel_dataa
